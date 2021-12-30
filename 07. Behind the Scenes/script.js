@@ -29,7 +29,7 @@ function calcAge(birthYear) {
 
 const firstName = 'Jonas';
 calcAge(1991);
-*/
+
 
 // Hoisting and TDZ {Variable Environment}
 
@@ -73,3 +73,39 @@ const z = 3;
 console.log(x === window.x);
 console.log(x === window.y);
 console.log(x === window.z);
+*/
+
+// The This Keyword
+
+// console.log(this); // This in the global scope
+
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  //   console.log(this);
+};
+calcAge(1991); // this keyword is undefined in regular function call
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  //   console.log(this);
+};
+calcAgeArrow(1980); // Arrow Function do not get its own this keyword but a lexical this
+
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(2037 - this.year);
+  },
+};
+
+jonas.calcAge(); // When the this keyword is used as a method, it points to the object that is callling that method
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
+
+const f = jonas.calcAge;
+f();
