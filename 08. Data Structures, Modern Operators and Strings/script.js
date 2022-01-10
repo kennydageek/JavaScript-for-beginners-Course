@@ -404,6 +404,7 @@ const game = {
     team2: 6.5,
   },
 };
+// printGoals({});
 
 // const players1 = [game.players[0]];
 // console.log(players1);
@@ -436,3 +437,18 @@ console.log(players1Final);
 const { team1, x: draw, team2 } = game.odds;
 
 console.log(team1, draw, team2);
+
+// const printGoals = function (game) {
+//   console.log({ game });
+// };
+// printGoals(game);
+
+// const [...scored] = game.scored;
+
+let scored = [...game.scored];
+console.log(scored);
+
+function printGoals(scored) {
+  console.log(scored);
+}
+printGoals(...scored);
