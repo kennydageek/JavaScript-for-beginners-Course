@@ -430,3 +430,9 @@ console.log(allPlayers);
 
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 console.log(players1Final);
+
+// Based on the game.odds object, create one variable for each odd
+
+const { team1, x: draw, team2 } = game.odds;
+
+console.log(team1, draw, team2);
