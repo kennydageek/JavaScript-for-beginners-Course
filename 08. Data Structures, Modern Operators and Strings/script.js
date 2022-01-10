@@ -434,21 +434,19 @@ console.log(players1Final);
 
 // Based on the game.odds object, create one variable for each odd
 
-const { team1, x: draw, team2 } = game.odds;
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
 
 console.log(team1, draw, team2);
 
-// const printGoals = function (game) {
-//   console.log({ game });
-// };
-// printGoals(game);
+// Write PrintGoals that receives an arbitrary number of player names(not an array) and prints each of them to the console
 
-// const [...scored] = game.scored;
+const printGoals = function (...players) {
+  console.log(players);
+  console.log(`${players.length} goals were scored`);
+};
 
-let scored = [...game.scored];
-console.log(scored);
+printGoals(...game.scored);
 
-function printGoals(scored) {
-  console.log(scored);
-}
-printGoals(...scored);
+//
