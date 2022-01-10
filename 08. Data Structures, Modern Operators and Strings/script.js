@@ -449,4 +449,7 @@ const printGoals = function (...players) {
 
 printGoals(...game.scored);
 
-//
+// Print to the console which team is more likely to win, without using an if/else statement or the ternary operator.
+
+team1 < team2 && console.log('Team1 is more likely to win');
+team1 > team2 && console.log('Team 2 is more likely to win');
