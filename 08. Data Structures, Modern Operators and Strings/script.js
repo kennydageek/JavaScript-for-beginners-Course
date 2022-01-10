@@ -504,8 +504,10 @@ const restaurant = {
   },
 };
 
-// ENHANCED OBJECT LITERALS
-
+// Optional Chaining(.?)
+console.log(restaurant.openingHours.mon.open);
+console.log(restaurant.openingHours.mon?.open);
+//  optional chaining is an ES2020 feature and does not work on my browser
 /*
 // LOOPING ARRAYS: THE FOR OF LOOP
 
