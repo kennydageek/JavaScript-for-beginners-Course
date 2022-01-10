@@ -425,3 +425,8 @@ console.log(fieldPlayers);
 
 const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
+
+// Create a new array ('players1Final') containing the original team1 players plus 'Thiago', 'Coutinho' and 'Perisic'
+
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
