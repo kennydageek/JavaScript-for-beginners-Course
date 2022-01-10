@@ -39,6 +39,15 @@ const game = {
     team2: 6.5,
   },
 };
+
+// Coding Challenge #2
+
+// Task 1
+for (const goals of game.scored.entries()) {
+  console.log(`goal ${goals[0] + 1}: ${goals[1]}`);
+}
+
+/*
 // printGoals({});
 
 // const players1 = [game.players[0]];
@@ -91,3 +100,4 @@ printGoals(...game.scored);
 
 team1 < team2 && console.log("Team1 is more likely to win");
 team1 > team2 && console.log("Team 2 is more likely to win");
+*/
