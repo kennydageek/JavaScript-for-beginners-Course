@@ -43,9 +43,18 @@ const game = {
 // Coding Challenge #2
 
 // Task 1
-for (const goals of game.scored.entries()) {
-  console.log(`goal ${goals[0] + 1}: ${goals[1]}`);
+for (const [i, player] of game.scored.entries()) {
+  console.log(`goal ${i + 1}: ${player}`);
 }
+
+// Task 2
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) {
+  average += odd;
+}
+average /= odds.length;
+console.log(average);
 
 /*
 // printGoals({});
