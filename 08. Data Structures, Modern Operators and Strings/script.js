@@ -504,6 +504,38 @@ const restaurant = {
   },
 };
 
+// SETS
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+console.log(new Set('Jonas'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+let staffUnique = new Set(staff);
+
+staffUnique = [...staffUnique];
+console.log(staffUnique);
+
+/*
 // Looping Objects: Object Keys, Values, and Entries.
 
 // Looping Propety Names
@@ -530,7 +562,7 @@ const entries = Object.entries(openingHours);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
-/*
+
 // Optional Chaining(.?)
 console.log(restaurant.openingHours.mon.open);
 console.log(restaurant.openingHours.mon?.open);
