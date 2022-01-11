@@ -530,10 +530,14 @@ for (const order of ordersSet) console.log(order);
 // Example
 
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-let staffUnique = new Set(staff);
+const staffUnique = [...new Set(staff)];
 
-staffUnique = [...staffUnique];
 console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('jonasschmedtmann').size);
 
 /*
 // Looping Objects: Object Keys, Values, and Entries.
