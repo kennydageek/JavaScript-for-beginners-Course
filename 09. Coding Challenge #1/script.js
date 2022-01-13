@@ -61,6 +61,12 @@ console.log(events);
 
 const noRepeatEvents = new Set(events);
 console.log(noRepeatEvents);
+
+// Task 2
+
+gameEvents.delete(64);
+
+console.log(gameEvents);
 /*
 // Coding Challenge #2
 
