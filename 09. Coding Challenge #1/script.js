@@ -67,6 +67,20 @@ console.log(noRepeatEvents);
 gameEvents.delete(64);
 
 console.log(gameEvents);
+
+// Task 3
+const str = `An `;
+
+// Task 4
+
+for (const [eventTime, action] of gameEvents) {
+  if (eventTime < 45) {
+    console.log(`[First Half]${eventTime}: ${action}`);
+  } else {
+    console.log(`[Second Half]${eventTime}: ${action}`);
+  }
+  // console.log(event, index);
+}
 /*
 // Coding Challenge #2
 
