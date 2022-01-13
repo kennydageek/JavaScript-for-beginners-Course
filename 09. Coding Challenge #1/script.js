@@ -57,10 +57,11 @@ const gameEvents = new Map([
 
 // Task 1
 const events = gameEvents.values();
-console.log(events);
+// console.log(events);
 
-const noRepeatEvents = new Set(events);
-console.log(noRepeatEvents);
+const noRepeatEventsArray = [...new Set(events)];
+
+console.log(noRepeatEventsArray);
 
 // Task 2
 
@@ -69,15 +70,17 @@ gameEvents.delete(64);
 console.log(gameEvents);
 
 // Task 3
-const str = `An `;
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
 
 // Task 4
 
 for (const [eventTime, action] of gameEvents) {
   if (eventTime < 45) {
-    console.log(`[First Half]${eventTime}: ${action}`);
+    console.log(`[First Half] ${eventTime}: ${action}`);
   } else {
-    console.log(`[Second Half]${eventTime}: ${action}`);
+    console.log(`[Second Half] ${eventTime}: ${action}`);
   }
   // console.log(event, index);
 }
