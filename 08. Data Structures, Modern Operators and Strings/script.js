@@ -529,6 +529,12 @@ for (const [key, value] of question) {
   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
 }
 
+// Convert map to array
+
+console.log(...question);
+// console.log(question.entries());
+console.log(...question.keys());
+console.log(...question.values());
 /*
 // const answer = Number(prompt('Your answer'));
 const answer = 3;
