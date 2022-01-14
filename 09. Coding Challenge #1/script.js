@@ -55,7 +55,6 @@ const gameEvents = new Map([
   [92, "Yellow card"],
 ]);
 
-/*
 // Task 1
 const events = gameEvents.values();
 // console.log(events);
@@ -85,7 +84,7 @@ for (const [eventTime, action] of gameEvents) {
   }
   // console.log(event, index);
 }
-
+/*
 // Coding Challenge #2
 
 // Task 1
