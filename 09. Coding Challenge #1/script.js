@@ -1,29 +1,28 @@
 document.body.append(document.createElement("textarea"));
 document.body.append(document.createElement("button"));
 
-// Task 1: Create a Function that converts Underscore to CamelCase
-const toCamelCase = function (underscore) {
-  let camelCasedWords;
-  const camelArray = [];
-  let trimLowerCase = underscore.trim().toLowerCase().split("_");
-  console.log(trimLowerCase);
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
 
-  for (const camel of trimLowerCase) {
-    camelArray.push(camel);
+  const rows = text.split("\n");
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${">".repeat(i + 1)}`);
   }
-  let word2 = camelArray[1];
-  word2 = word2[0].toUpperCase() + word2.slice(1);
-  console.log(word2);
+});
 
-  camelCasedWords = camelArray[0] + word2;
-  console.log(camelCasedWords);
-};
+// document.querySelector()
 
-toCamelCase("underscore_case");
-toCamelCase("first_name");
-toCamelCase("Some_Variable");
-toCamelCase("   calculate_AGE");
-toCamelCase("delayed_departure");
+// toCamelCase("underscore_case");
+// toCamelCase("first_name");
+// toCamelCase("Some_Variable");
+// toCamelCase("   calculate_AGE");
+// toCamelCase("delayed_departure");
 /*
 const game = {
   team1: "Bayern Munich",
