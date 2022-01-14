@@ -1,3 +1,30 @@
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+// Task 1: Create a Function that converts Underscore to CamelCase
+const toCamelCase = function (underscore) {
+  let camelCasedWords;
+  const camelArray = [];
+  let trimLowerCase = underscore.trim().toLowerCase().split("_");
+  console.log(trimLowerCase);
+
+  for (const camel of trimLowerCase) {
+    camelArray.push(camel);
+  }
+  let word2 = camelArray[1];
+  word2 = word2[0].toUpperCase() + word2.slice(1);
+  console.log(word2);
+
+  camelCasedWords = camelArray[0] + word2;
+  console.log(camelCasedWords);
+};
+
+toCamelCase("underscore_case");
+toCamelCase("first_name");
+toCamelCase("Some_Variable");
+toCamelCase("   calculate_AGE");
+toCamelCase("delayed_departure");
+/*
 const game = {
   team1: "Bayern Munich",
   team2: "Borrusia Dortmund",
@@ -39,6 +66,8 @@ const game = {
     team2: 6.5,
   },
 };
+
+
 
 // Coding Challenge #3
 const gameEvents = new Map([
@@ -84,7 +113,7 @@ for (const [eventTime, action] of gameEvents) {
   }
   // console.log(event, index);
 }
-/*
+
 // Coding Challenge #2
 
 // Task 1
