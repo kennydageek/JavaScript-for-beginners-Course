@@ -108,7 +108,7 @@ greeterHey('Jonas');
 greeterHey('Steven');
 
 greet('Hello')('Jonas');
-*/
+
 
 // The Call and Apply Method
 
@@ -207,3 +207,21 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
+*/
+
+const poll = {
+  question: 'What is your favoruite programming language?',
+  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+  // This generates [0,0,0,0]. More in the next section!
+  answers: new Array(4).fill(0),
+  // Get answer
+  registerNewAnswer() {
+    const answer = Number(
+      prompt(
+        `${this.question}\n${this.options.join('\n')}\n(Write option number)`
+      )
+    );
+  },
+};
+
+// console.log(poll.registerNewAnswer());
