@@ -221,7 +221,18 @@ const poll = {
         `${this.question}\n${this.options.join('\n')}\n(Write option number)`
       )
     );
+    console.log(answer);
+    // Register answer
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
+
+    console.log(this.answers);
   },
 };
 
-// console.log(poll.registerNewAnswer());
+// poll.registerNewAnswer();
+
+document
+  .querySelector('.poll')
+  .addEventListener('click', poll.registerNewAnswer.bind(poll));
