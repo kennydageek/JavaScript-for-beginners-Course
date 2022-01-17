@@ -207,7 +207,7 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
-*/
+
 
 const poll = {
   question: 'What is your favoruite programming language?',
@@ -248,3 +248,15 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string');
 
 // [5,2,3]
 // [1,5,3,9,6,1]
+*/
+
+// Immediately Invoked Function Expressions
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+(function () {
+  console.log('This will never run again');
+})();
