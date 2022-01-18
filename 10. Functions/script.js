@@ -291,7 +291,7 @@ document
 
 poll.displayResults.call({ answers: [5, 2, 3] });
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] });
-*/
+
 
 // CLOSURES
 
@@ -352,3 +352,15 @@ const boardPassengers = function (n, wait) {
 };
 
 boardPassengers(180, 3);
+*/
+
+// Coding Challenge on closures
+
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  document.body.addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})(); // How did the closure work?
