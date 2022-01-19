@@ -65,11 +65,11 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -104,7 +104,6 @@ console.log(letters);
 // JOIN
 console.log(letters.join(' - '));
 
-
 // The At Method
 const arr = [23, 11, 64];
 console.log(arr[0]); // Old way
@@ -114,7 +113,6 @@ console.log(arr.at(0)); // New way
 console.log(arr[arr.length - 1]); // traditional
 console.log(arr.slice(-1)[0]); // traditional
 console.log(arr.at(-1)); // modern
-*/
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -136,4 +134,25 @@ movements.forEach(function (mov, i, arr) {
   } else {
     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(mov)}`);
   }
+});
+*/
+
+// ForEach with Map
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// ForEach with Set
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, key, set) {
+  console.log(`${key}: ${value}`);
 });
