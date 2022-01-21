@@ -2,15 +2,15 @@ const checkDogs = function (dogsJulia, dogsKate) {
   // Task 1
   let dogsJuliaCopy = dogsJulia.slice(0);
 
-  dogsJuliaCopy = dogsJuliaCopy.splice(1, 3);
+  dogsJuliaCopy = dogsJuliaCopy.splice(1, 2);
 
   // Task 2
   const allDogs = dogsJuliaCopy.concat(dogsKate);
 
   // Task 3
-  allDogs.forEach(function (value, i) {
-    if (value >= 3) {
-      console.log(`Dog number ${i + 1} is an adult, and is ${value} years old`);
+  allDogs.forEach(function (dog, i) {
+    if (dog >= 3) {
+      console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`);
     } else {
       console.log(`Dog number ${i + 1} is still a puppy`);
     }
