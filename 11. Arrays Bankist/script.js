@@ -81,6 +81,17 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const createUsernames = function (user) {
+  const username = user
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  return username;
+};
+
+console.log(createUsernames('Steven Thomas Williams')); // stw
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -175,7 +186,7 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, key, set) {
   console.log(`${key}: ${value}`);
 });
-*/
+
 
 // Converting with Maps
 const eurToUsd = 1.1;
@@ -203,3 +214,4 @@ const movementsDescriptions = movements.map(
 );
 
 console.log(movementsDescriptions);
+*/
