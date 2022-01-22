@@ -35,6 +35,10 @@ const calcAverageHumanAge = function (ages) {
   console.log(humanAge);
 
   // Task 2
+  const adult = humanAge.filter(function (age, i) {
+    return age >= 18;
+  });
+  console.log(adult);
 };
 
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
