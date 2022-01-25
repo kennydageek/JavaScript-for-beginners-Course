@@ -515,4 +515,13 @@ const ranDice100 = Array.from(
   { length: 100 },
   (_, i) => Math.trunc(Math.random() * 100) + 1
 );
-console.log(ranDice100);
+// console.log(ranDice100);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+
+  console.log(movementsUI);
+});
