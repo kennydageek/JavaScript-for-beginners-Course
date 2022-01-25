@@ -389,3 +389,13 @@ for (const [i, acc] of accounts.entries()) {
   else continue;
 }
 */
+
+console.log(movements);
+
+// QUALITY
+console.log(movements.includes(-130));
+
+// CONDITION
+console.log(movements.some(mov => mov === -130)); // Same as the .includes
+const anyDeposits = movements.some(mov => mov > 1500);
+console.log(anyDeposits);
