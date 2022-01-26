@@ -88,12 +88,23 @@ const ownersEatTooLittle = dogs
   .flatMap((dog) => dog.owners);
 console.log(ownersEatTooLittle);
 
-// 4
-
+// 4.
 console.log(
   `${ownersEatTooMuch.join(
     " and "
   )} dogs eat too much! and ${ownersEatTooLittle.join(
     " and "
   )} dogs eat too much`
+);
+
+// 5.
+console.log(dogs.some((cur) => cur.curFood === cur.recommendedFood));
+
+// 6.
+console.log(
+  dogs.some(
+    (cur) =>
+      cur.curFood > cur.recommendedFood * 0.9 &&
+      cur.curFood < cur.recommendedFood * 1.1
+  )
 );
