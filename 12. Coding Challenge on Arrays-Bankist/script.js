@@ -37,7 +37,7 @@ const calcAverageHumanAge = function (ages) {
 
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
-*/
+
 
 // Coding Challenge 3
 
@@ -49,3 +49,20 @@ const calcAverageHumanAge = (ages) =>
 
 console.log(calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]));
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+*/
+
+// Coding Challenge #4
+
+// Task 1
+const dogs = [
+  { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+  { weight: 8, curFood: 200, owners: ["Matilda"] },
+  { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+  { weight: 32, curFood: 340, owners: ["Michael"] },
+];
+
+dogs.forEach((cur) => {
+  cur.recommendedFood = (cur.weight ** 0.75 * 0.28) / 1000;
+});
+
+console.log(dogs);
