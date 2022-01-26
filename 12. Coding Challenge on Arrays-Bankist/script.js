@@ -108,3 +108,17 @@ console.log(
       cur.curFood < cur.recommendedFood * 1.1
   )
 );
+
+// 7.
+const eatOkay = dogs.filter(
+  (cur) =>
+    cur.curFood > cur.recommendedFood * 0.9 &&
+    cur.curFood < cur.recommendedFood * 1.1
+);
+console.log(eatOkay);
+
+// 8.
+const dogsSorted = dogs
+  .slice()
+  .sort((a, b) => a.recommendedFood - b.recommendedFood);
+console.log(dogsSorted);
