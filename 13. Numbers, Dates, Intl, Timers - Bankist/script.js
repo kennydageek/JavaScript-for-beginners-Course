@@ -314,7 +314,7 @@ labelBalance.addEventListener('click', function () {
     if (i % 3 === 0) row.style.backgroundColor = 'blue';
   });
 });
-*/
+
 
 // Numeric Separators
 const diameter = 287_460_000_000;
@@ -332,3 +332,13 @@ console.log(PI);
 console.log(Number('230000')); // 230000
 console.log(Number('230_000')); // Doesn't work
 console.log(Number.parseInt('230_000')); // 230
+*/
+
+// Working with BigInt
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER); // The biggest number JS can safely represent
+
+console.log(28484848887484387348734870808704280887954n);
+
+// Operations
