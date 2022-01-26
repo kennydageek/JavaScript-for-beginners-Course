@@ -291,7 +291,7 @@ console.log(Math.ceil(23.9));
 console.log((2.7).toFixed(0)); // 3 which is a string
 console.log((2.7).toFixed(3)); // 2.700
 console.log(+(2.345).toFixed(2)); // 2.35 -> Number because of + sign
-*/
+
 
 // The remainder operator
 
@@ -314,3 +314,21 @@ labelBalance.addEventListener('click', function () {
     if (i % 3 === 0) row.style.backgroundColor = 'blue';
   });
 });
+*/
+
+// Numeric Separators
+const diameter = 287_460_000_000;
+console.log(diameter);
+
+const priceCents = 345_99;
+console.log(priceCents);
+
+const transferFee1 = 15_00;
+const transferFee2 = 1_500;
+
+const PI = _3_._1415_; // Doesn't work
+console.log(PI);
+
+console.log(Number('230000')); // 230000
+console.log(Number('230_000')); // Doesn't work
+console.log(Number.parseInt('230_000')); // 230
