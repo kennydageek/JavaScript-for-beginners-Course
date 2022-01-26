@@ -271,7 +271,7 @@ console.log(Number.parseFloat('2.5rem'));
 console.log(Number.isNaN(20));
 console.log(Number.isNaN('20'));
 console.log(Number.isFinite(23 / 0));
-*/
+
 
 // Math and Rounding
 console.log(Math.sqrt(25));
@@ -291,3 +291,26 @@ console.log(Math.ceil(23.9));
 console.log((2.7).toFixed(0)); // 3 which is a string
 console.log((2.7).toFixed(3)); // 2.700
 console.log(+(2.345).toFixed(2)); // 2.35 -> Number because of + sign
+*/
+
+// The remainder operator
+
+console.log(5 % 2); // 1
+console.log(8 % 3); // 2
+
+console.log(6);
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+    // 0,2,4,6
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+
+    // 0, 3,6,9
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  });
+});
