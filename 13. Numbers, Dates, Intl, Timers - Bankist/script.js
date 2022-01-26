@@ -164,7 +164,7 @@ btnLogin.addEventListener('click', function (e) {
   );
   console.log(currentAccount);
 
-  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+  if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
@@ -182,7 +182,7 @@ btnLogin.addEventListener('click', function (e) {
 
 btnTransfer.addEventListener('click', function (e) {
   e.preventDefault();
-  const amount = Number(inputTransferAmount.value);
+  const amount = +inputTransferAmount.value;
   const receiverAcc = accounts.find(
     acc => acc.username === inputTransferTo.value
   );
@@ -206,7 +206,7 @@ btnTransfer.addEventListener('click', function (e) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value);
+  const amount = +inputLoanAmount.value;
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
     // Add movement
@@ -223,7 +223,7 @@ btnClose.addEventListener('click', function (e) {
 
   if (
     inputCloseUsername.value === currentAccount.username &&
-    Number(inputClosePin.value) === currentAccount.pin
+    +inputClosePin.value === currentAccount.pin
   ) {
     const index = accounts.findIndex(
       acc => acc.username === currentAccount.username
@@ -251,3 +251,43 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+/*
+// Converting and Checking Numbers
+
+console.log(23 === 23.0);
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 === -0.3);
+
+// Converting String to Number
+console.log(+'23');
+
+// Parsing a number from a String
+console.log(Number.parseInt('30px', 10));
+console.log(Number.parseInt('e30', 10));
+
+console.log(Number.parseFloat('2.5rem'));
+console.log(Number.parseFloat('2.5rem'));
+
+console.log(Number.isNaN(20));
+console.log(Number.isNaN('20'));
+console.log(Number.isFinite(23 / 0));
+*/
+
+// Math and Rounding
+console.log(Math.sqrt(25));
+console.log(Math.max(5, 18, 23, 11, 2));
+
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min) + 1 + min);
+
+// Rounding Integers
+console.log(Math.trunc(23.9));
+console.log(Math.round(23.9));
+console.log(Math.ceil(23.9));
+
+// Rounding decimals
+console.log((2.7).toFixed(0)); // 3 which is a string
+console.log((2.7).toFixed(3)); // 2.700
+console.log(+(2.345).toFixed(2)); // 2.35 -> Number because of + sign
