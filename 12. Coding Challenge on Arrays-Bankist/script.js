@@ -76,3 +76,24 @@ console.log(
     dogSarah.curFood > dogSarah.recommendedFood ? "much" : "little"
   }`
 );
+
+// 3.
+const ownersEatTooMuch = dogs
+  .filter((dog) => dog.curFood > dog.recommendedFood)
+  .flatMap((dog) => dog.owners);
+console.log(ownersEatTooMuch);
+
+const ownersEatTooLittle = dogs
+  .filter((dog) => dog.curFood < dog.recommendedFood)
+  .flatMap((dog) => dog.owners);
+console.log(ownersEatTooLittle);
+
+// 4
+
+console.log(
+  `${ownersEatTooMuch.join(
+    " and "
+  )} dogs eat too much! and ${ownersEatTooLittle.join(
+    " and "
+  )} dogs eat too much`
+);
