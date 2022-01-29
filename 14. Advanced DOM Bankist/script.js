@@ -67,10 +67,58 @@ header.append(message);
 // header.after(message);
 
 // Deleting Elements
-
 document
   .querySelector('.btn--close-cookie')
   .addEventListener('click', function () {
     message.remove();
     // message.parentElement.removeChild(message); // Old way
   });
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '104%';
+
+// Changing Styles
+console.log(message.style.height); // returns nothing
+console.log(message.style.backgroundColor); // returns rgb(55,56, 61);
+
+console.log(getComputedStyle(message).color); // rgb(187,187,187)
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+// Changing CSS custom property
+document.documentElement.style.setProperty('--color-primary', 'blue');
+
+// Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+// Setting Attributes
+logo.alt = 'Beautiful minimalist logo';
+
+// Non-standard
+console.log(logo.designer); // does not work
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'Bankist');
+
+console.log(logo.src); // Absolute URL
+console.log(logo.getAttribute('src')); // Relative URl
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href); // Absolute URL
+console.log(link.getAttribute('href')); // Relative URL
+
+// Data attributes
+console.log(logo.dataset.versionNumber);
+
+// Classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c');
+logo.classList.toggle('c');
+logo.classList.contains('c'); // not includes
+
+logo.className = 'jonas'; // Setting Class Name BUT DO NOT USE AS IT OVERIDES ALL EXISTING CLASSES
