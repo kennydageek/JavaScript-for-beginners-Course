@@ -173,3 +173,5 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000); // remove
 // h1.onmouseenter = function (e) {
 //   alert('addEventListener: Great! You are reading the heading :D');
 // };
+
+// Event Propagation: Capturing and Bubbling
