@@ -474,3 +474,21 @@ console.log(h1.parentElement.children);
   if (el !== h1) el.style.transform = 'scale(0.5)';
 });
 */
+
+// LifeCycle DOM Events
+
+// DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!', e);
+});
+
+// Load
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+
+// // Beforeunload
+// window.addEventListener('beforenload', function (e) {
+//   e.preventDefault();
+//   e.returnValue = 'message';
+// });
