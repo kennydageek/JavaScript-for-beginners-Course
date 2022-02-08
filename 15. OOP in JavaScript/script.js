@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 const Person = function (firstName, birthYear) {
   // Instance properties
 
@@ -72,3 +73,34 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(x => x + 1);
+*/
+
+// Coding Challenge #1;
+
+// Task 1
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+const BMW = new Car('BMW', 120);
+const Mercedes = new Car('Mercedes', 95);
+
+// Task 2
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} is going at ${this.speed}km/h`);
+};
+
+// Task 3
+Car.prototype.brake = function () {
+  this.speed -= 10;
+  console.log(`${this.make} is going at ${this.speed}km/h`);
+};
+
+// Task 4
+BMW.accelerate();
+BMW.accelerate();
+BMW.brake();
+Mercedes.accelerate();
+Mercedes.brake();
