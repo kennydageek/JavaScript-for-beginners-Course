@@ -186,7 +186,7 @@ const account = {
 console.log(account.latest);
 account.latest = 50;
 console.log(account.movements);
-*/
+
 
 const PersonProto = {
   calcAge() {
@@ -213,3 +213,40 @@ sarah.init('Sarah', 1979);
 sarah.calcAge();
 
 console.log(sarah);
+*/
+
+// Coding Challenge #2
+
+// Task 1 - Recreate Challenge #1 using Classes
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} going at ${this.speed}km/h`);
+  }
+
+  brake() {
+    this.speed -= 10;
+    console.log(`${this.make} going at ${this.speed}km/h`);
+  }
+}
+
+const bmw = new CarCl('BMW', 120);
+const mercedes = new CarCl('Mercedes', 95);
+
+console.log(bmw);
+
+bmw.accelerate();
+bmw.accelerate();
+bmw.brake();
+bmw.accelerate();
+
+mercedes.accelerate();
+mercedes.accelerate();
+mercedes.brake();
+mercedes.accelerate();
