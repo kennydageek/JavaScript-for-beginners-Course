@@ -213,7 +213,7 @@ sarah.init('Sarah', 1979);
 sarah.calcAge();
 
 console.log(sarah);
-*/
+
 
 // Coding Challenge #2
 
@@ -264,3 +264,36 @@ mercedes.accelerate();
 mercedes.accelerate();
 mercedes.brake();
 mercedes.accelerate();
+*/
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// / Must be added before any student method is added because Object.create returns an empty object
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('mike', 2020, 'Computer Science');
+// console.log(mike);
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
