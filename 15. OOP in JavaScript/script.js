@@ -569,9 +569,9 @@ class EVCl extends CarCl {
   }
 }
 
-const Rivian = new EVCl('Rivian', 120, 23);
+const rivian = new EVCl('Rivian', 120, 23);
 
-Rivian.accelerate()
+rivian.accelerate()
   .accelerate()
   .accelerate()
   .brake()
