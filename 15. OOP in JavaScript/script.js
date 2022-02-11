@@ -439,7 +439,7 @@ const jay = Object.create(StudentProto);
 jay.init('Jay', 2010, 'Computer Science');
 jay.introduce();
 jay.calcAge();
-*/
+
 
 // Another Class Example
 
@@ -517,3 +517,63 @@ console.log(acc1._approveLoan(100));
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 
 console.log(acc1.getMovements());
+*/
+
+// Coding challenge #4
+
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+    return this;
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} is going at ${this.speed} km/h`);
+    return this;
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+class EVCl extends CarCl {
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this._charge = charge;
+  }
+
+  chargeBattery(chargeTo) {
+    this._charge = chargeTo;
+    return this;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    this._charge--;
+    console.log(
+      `${this.make} is going at ${this.speed} km/h with a charge of ${this._charge}`
+    );
+    return this;
+  }
+}
+
+const Rivian = new EVCl('Rivian', 120, 23);
+
+Rivian.accelerate()
+  .accelerate()
+  .accelerate()
+  .brake()
+  .chargeBattery(50)
+  .accelerate();
