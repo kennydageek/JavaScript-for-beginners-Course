@@ -51,7 +51,7 @@ const renderCountry = function (data, className = '') {
           +data.population / 1000000
         ).toFixed(1)}M people</p>
         <p class="country__row"><span>🗣️</span>${data.languages.por}</p>
-        <p class="country__row"><span>💰</span>${data.currencies}</p>
+        <p class="country__row"><span>💰</span>${data.currencies.EUR.name}</p>
       </div>
   </article>
   `;
@@ -112,9 +112,20 @@ const request = fetch(`https://restcountries.com/v3.1/name/portugal`);
 // };
 
 const getCountryData = function (country) {
+  // Country 1
   fetch(`https://restcountries.com/v3.1/name/${country}`)
     .then(response => response.json())
-    .then(data => renderCountry(data[0]));
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders[0];
+
+      if (!neighbour) return;
+
+      // Country 2
+      return fetch(`https://restcountries.com/v3.1/alpha/${neighbour}`);
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data, 'neighbour'));
 };
 
 getCountryData('portugal');
