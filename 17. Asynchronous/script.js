@@ -108,7 +108,8 @@ getCountryAndNeighbour('usa');
 // const getCountryData = function (country) {
 //   fetch(`https://restcountries.com/v3.1/name/${country}`)
 //     .then(function (response) {
-//       console.log(response);
+//       console. ;
+// log(response);
 //       return response.json();
 //     })
 //     .then(function (data) {
@@ -116,7 +117,7 @@ getCountryAndNeighbour('usa');
 //       renderCountry(data[0]);
 //     });
 // };
-
+/*
 const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
     if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
@@ -156,3 +157,81 @@ btn.addEventListener('click', function () {
 });
 
 // getCountryData('kddkf');
+
+// Coding challenge #1
+
+const whereAmI = function (lat, lng) {
+  fetch(
+    `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+  )
+    .then(function (response) {
+      console.log(response);
+      if (!response.ok) throw new Error('Incorrect coordinates');
+
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(
+        `you are in ${data.principalSubdivision}, ${data.countryName}`
+      );
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+whereAmI(6.5244, 3.3792);
+
+
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+Promise.resolve('Resolved promise 2').then(res => {
+  for (let i = 0; i < 10000; i++) {}
+  console.log(res);
+});
+console.log('Test end');
+*/
+
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('Lottery draw is happening');
+
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve('You WIN');
+    } else {
+      reject(new Error('You lost your money'));
+    }
+  }, 2000);
+});
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+// Promisifying setTimeout
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+wait(1)
+  .then(() => {
+    console.log(`1 second passed`);
+    return wait(1);
+  })
+  .then(() => {
+    console.log(`2 second passed`);
+    return wait(1);
+  })
+  .then(() => {
+    console.log(`3 second passed`);
+    return wait(1);
+  })
+  .then(() => {
+    console.log(`4 second passed`);
+    return wait(1);
+  });
+
+Promise.resolve('abc').then(x => console.log(x));
+Promise.reject(new Error('Problem!')).catch(x => console.error(x));
