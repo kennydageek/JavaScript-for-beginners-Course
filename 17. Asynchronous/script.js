@@ -255,7 +255,7 @@ const whereAmI = function () {
 getPosition().then(pos => console.log(pos));
 
 btn.addEventListener('click', whereAmI);
-*/
+
 
 const wait = function (seconds) {
   return new Promise(function (resolve) {
@@ -302,3 +302,34 @@ createImage('img/img-1.jpg')
     currentImg.style.display = 'none';
   })
   .catch(err => console.error(err));
+*/
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+getPosition().then(pos => console.log(pos));
+// fetch(`https://restcountries.com/v3.1/name/${country}`).then(res => console.log(res))
+
+const whereAmI = async function () {
+  // Geolaocation
+  const pos = await getPosition();
+  const { latitude: lat, longitude: lng } = pos.coords;
+
+  // Reverse Geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+  const dataGeo = await resGeo.json();
+
+  // Countrydata
+
+  const res = await fetch(
+    `https://restcountries.com/v3.1/name/${dataGeo.country}`
+  );
+  const data = await res.json();
+  renderCountry(data[0]);
+};
+
+whereAmI();
+console.log('FIRST');
