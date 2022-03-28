@@ -407,7 +407,7 @@ get3Countries('portugal', 'canada', 'tanzania');
     getJSON(`https://restcountries.com/v3.1/name/egypt`),
     getJSON(`https://restcountries.com/v3.1/name/mexico`),
   ]);
-  console.log(res[0]);
+  console.log(res);
 })();
 
 const timeout = function (sec) {
@@ -420,7 +420,32 @@ const timeout = function (sec) {
 
 Promise.race([
   getJSON(`https://restcountries.com/v3.1/name/tanzania`),
-  timeout(1),
+  timeout(5),
 ])
   .then(res => console.log(res[0]))
+  .catch(err => console.error(err));
+
+// Promise.allSettled (ES2020)
+
+Promise.allSettled([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Success'),
+]).then(res => console.log(res));
+
+Promise.all([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Success'),
+])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
+// Promise.any (ES2021)
+Promise.any([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Success'),
+])
+  .then(res => console.log(res))
   .catch(err => console.error(err));
