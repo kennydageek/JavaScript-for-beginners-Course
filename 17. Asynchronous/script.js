@@ -477,8 +477,8 @@ const createImage = function (imgPath) {
 };
 
 // Coding Challenge #3
-
 // Part 1
+
 const loadNPause = async function () {
   try {
     const img1 = await createImage('img/img-1.jpg');
@@ -495,4 +495,19 @@ const loadNPause = async function () {
     err => console.error('Image not found');
   }
 };
-loadNPause();
+// loadNPause();
+
+// Part 2
+const imgArr = ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg'];
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async img => await createImage(img));
+
+    const imgsEl = Promise.all(imgs);
+    (await imgsEl).forEach(img => img.classList.add('parallel'));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+loadAll(imgArr);
