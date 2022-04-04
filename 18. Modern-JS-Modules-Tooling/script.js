@@ -1,3 +1,4 @@
+/*
 // Importing module
 // import {totalPrice as price, tq , addToCart} from './shoppingCart.js';
 // addToCart('bread', 5);
@@ -26,6 +27,8 @@ console.log(cart)
 // console.log(data);
 // console.log('Something')
 
+// Top level await
+
 const getLastPost = async function() {
         const res = await fetch('https://jsonplaceholder.typicode.com/posts')
         const data = await res.json();
@@ -47,3 +50,37 @@ const lastPost = getLastPost();
 
 // A better way
 const lastPost2 = await getLastPost ();
+*/
+// 1. Write an IIFE
+const ShoppingCart2 =(function() {
+
+        // 2. Add variables
+        const cart = []
+        const shippingCost = 10;
+        const totalPrice = 237;
+        const totalQuantity = 23;
+        const addToCart = function(product, quantity) {
+                cart.push(product, quantity);
+                console.log(`${quantity} ${product} added to cart shipping cost is ${shippingCost}`);
+        };
+
+        const orderStock = function(product, quantity) {
+                cart.push(product, quantity);
+                console.log(`${quantity} ${product} ordered from supplier`);
+        };
+
+        // 3. Return an object that contains variable to be exposed as public API
+
+        return {
+                addToCart,
+                cart,
+                totalPrice,
+                totalQuantity,
+        }
+})();
+
+ShoppingCart2.addToCart('apple', 4);
+ShoppingCart2.addToCart('pizza', 2);
+console.log(ShoppingCart2);
+console.log(ShoppingCart2.shippingCost); // Undefined
+
