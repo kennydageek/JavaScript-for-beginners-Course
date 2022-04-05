@@ -51,6 +51,8 @@ const lastPost = getLastPost();
 // A better way
 const lastPost2 = await getLastPost ();
 */
+
+/*
 // 1. Write an IIFE
 const ShoppingCart2 =(function() {
 
@@ -59,10 +61,7 @@ const ShoppingCart2 =(function() {
         const shippingCost = 10;
         const totalPrice = 237;
         const totalQuantity = 23;
-        const addToCart = function(product, quantity) {
-                cart.push(product, quantity);
-                console.log(`${quantity} ${product} added to cart shipping cost is ${shippingCost}`);
-        };
+        const addToCart = C
 
         const orderStock = function(product, quantity) {
                 cart.push(product, quantity);
@@ -83,4 +82,16 @@ ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('pizza', 2);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost); // Undefined
+*/
 
+// COMMON JS MODULES
+
+// Export
+// The code below won't run in the browser but it would run in Node.js
+export.addToCart  = function(product, quantity) {
+        cart.push(product, quantity);
+        console.log(`${quantity} ${product} added to cart shipping cost is ${shippingCost}`);
+};
+
+// Import
+const {addToCart} = require('./shoppingCart.js');
