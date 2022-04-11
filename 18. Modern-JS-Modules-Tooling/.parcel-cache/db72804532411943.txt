@@ -1,6 +1,6 @@
-5819
+5822
 123C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\divide.js132936509520124439 0
-103C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\package.json132939003977923695 0
+103C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\package.json132939064828296889 0
 142C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\utils\src\isDirectoryInside.js132936885713651495 0
 121C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash\valueOf.js132936509657887107 0
 143C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\htmlparser2\lib\WritableStream.d.ts.map132936885373347271 0
@@ -20,7 +20,7 @@
 133C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\source-map-support\LICENSE.md132936885337723148 0
 122C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\.package-lock.json132936886577780242 0
 144C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\diagnostic\test\markdown.test.js132936885537791052 0
-95C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist132939004173009239 1
+95C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist132939166492377303 1
 153C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\runtime-js\src\helpers\node\css-loader.js132936885588932459 0
 127C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\_baseUnset.js132936509401811932 0
 128C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\terser\tools\terser.d.ts132936885725234869 0
@@ -72,7 +72,7 @@
 120C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\has.js132936509548222078 0
 129C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\flatMapDepth.js132936509528724300 0
 135C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\dotenv-expand\dotenv-expand.png132936885328612197 0
-101C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\index.html132938993406911503 0
+101C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\index.html132939064563889563 0
 140C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\css-win32-x64-msvc\README.md132936885328622191 0
 126C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\term-size\package.json132936885368116943 0
 133C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\json-parse-even-better-errors132936885321814620 1
@@ -97,7 +97,7 @@
 126C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\cloneDeep.js132936509507037800 0
 114C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\terser\bin132936885707365102 1
 135C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\utils\src\getRootDir.js132936885626211519 0
-100C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\script.js132938999063200185 0
+100C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\script.js132939064204653445 0
 135C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\leaflet\dist\leaflet-src.js.map132936509457793799 0
 133C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\svgo\plugins\convertColors.js132936885463791857 0
 132C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash\_arrayIncludesWith.js132936509352608186 0
@@ -389,6 +389,7 @@
 137C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\mdn-data\css\syntaxes.schema.json132936885558059460 0
 139C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\terser\node_modules\source-map\dist132936885340183927 1
 122C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lmdb\src\windows.c132936885768370601 0
+106C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\index.html132939166491397845 0
 158C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\node-resolver-core\test\fixture\nested\test.js132936885766591605 0
 149C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\watcher\src\windows\WindowsBackend.hh132936885609156770 0
 143C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\css-tree\lib\syntax\node\Parentheses.js132936885806563916 0
@@ -714,6 +715,7 @@
 133C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\leaflet\src\images\layers.svg132936509463461009 0
 120C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash\negate.js132936509617260013 0
 144C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\json-parse-even-better-errors\LICENSE.md132936885316379493 0
+117C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\index.fb7c3ad5.js.map132939166492267363 0
 134C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\postcss-value-parser\README.md132936885355593844 0
 126C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\domutils\lib\legacy.js132936885325575791 0
 125C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\xxhash-wasm\README.md132936885373557149 0
@@ -2442,6 +2444,7 @@
 126C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\_baseEach.js132936509363888673 0
 151C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\transformer-json\lib\JSONTransformer.js132936885381045021 0
 119C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash\merge.js132936509613917929 0
+113C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\index.fb7c3ad5.js132939166491407840 0
 131C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\_baseEachRight.js132936509364018589 0
 153C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\reporter-dev-server\lib\ServerReporter.js132936885627280913 0
 127C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\lodash-es\_baseEvery.js132936509364198485 0
@@ -5138,6 +5141,7 @@
 132C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\workers\lib\index.js132936885505328106 0
 157C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\reporter-dev-server\lib\ServerReporter.js.map132936885698789991 0
 131C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\workers\lib\process132936885601729087 1
+117C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\index.8cfc62b9.js.map132939165445035532 0
 147C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\core\test\fixtures\config\.parcelrc132936885590365094 0
 131C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\workers\lib\threads132936885630888843 1
 148C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\@parcel\runtime-js\src\helpers\bundle-url.js132936885457122171 0
@@ -5816,5 +5820,4 @@
 117C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\.bin\svgo.cmd132936886485113096 0
 117C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\.bin\svgo.ps1132936886485103100 0
 119C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\node_modules\.bin\terser.cmd132936886485382949 0
-103C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\main.js132939004172396698 0
-107C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\main.js.map132939004172636585 0
+113C:\Users\DELL\Desktop\github\JavaScript-for-beginners-Course\18. Modern-JS-Modules-Tooling\dist\index.8cfc62b9.js132939165444527994 0

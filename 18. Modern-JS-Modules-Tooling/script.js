@@ -99,7 +99,7 @@ const {addToCart} = require('./shoppingCart.js');
 */
 
 // import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
-import cloneDeep from 'lodash';
+import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 
 
 const state = {
@@ -125,4 +125,15 @@ if(module.hot) {
         module.hot.accept()
 }
 
+class Person {
+        greeting = 'Hey'
+        constructor(name) {
+                this.name = name;
+                console.log(`${this.greeting}, ${this.name}`)
+        }
+}
 
+const jonas = new Person('Jonas');
+
+// import 'core-js/stable';
+import 'core-js/stable/array/find';
