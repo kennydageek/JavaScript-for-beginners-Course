@@ -4,14 +4,13 @@
   "description": "Recipe application",
   "source": "index.html",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel && parcel watch",
     "build": "parcel build"
   },
   "author": "Kehinde Ajibade",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.4.1",
-    "parcel": "^2.4.1",
-    "sass": "^1.50.0"
+    "parcel": "^2.4.1"
   }
 }
