@@ -515,12 +515,11 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"aenu9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-// import icons from '../img/icons.svg'; // Parcel 1
-var _iconsSvg = require("url:../img/icons.svg"); // Parcel 2
-var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
+var _modelJs = require("./model.js");
+var _recipeViewJs = require("./views/recipeView.js");
+var _recipeViewJsDefault = parcelHelpers.interopDefault(_recipeViewJs);
 var _stable = require("../../node_modules/core-js/stable");
 var _runtime = require("regenerator-runtime/runtime");
-console.log(_iconsSvgDefault.default);
 const recipeContainer = document.querySelector('.recipe');
 const timeout = function(s) {
     return new Promise(function(_, reject) {
@@ -531,29 +530,46 @@ const timeout = function(s) {
 };
 // https://forkify-api.herokuapp.com/v2
 ///////////////////////////////////////
-const renderSpinner = function(parentEl) {
-    const markup = `
-  <div class="spinner">
-    <svg>
-      <use href="${_iconsSvgDefault.default}#icon-loader"></use>
-    </svg>
-  </div>  
-  `;
-    parentEl.textContent = '';
-    parentEl.insertAdjacentHTML('afterbegin', markup);
-};
-const showRecipe = async function() {
+const controlRecipes = async function() {
     try {
         const id = window.location.hash.slice(1);
         console.log(id);
         if (!id) return;
+        _recipeViewJsDefault.default.renderSpinner();
         // 1) Loading recipe
-        renderSpinner(recipeContainer);
+        await _modelJs.loadRecipe(id);
+        // 2) Rendering recipe
+        _recipeViewJsDefault.default.render(_modelJs.state.recipe);
+    } catch (err) {
+        alert(err);
+    }
+};
+controlRecipes();
+[
+    'hashchange',
+    'load'
+].forEach((ev)=>window.addEventListener(ev, controlRecipes)
+) // window.addEventListener('hashchange', controlRecipes)
+ // window.addEventListener('load', controlRecipes);
+;
+
+},{"./model.js":"Y4A21","./views/recipeView.js":"l60JC","../../node_modules/core-js/stable":"7CRIE","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Y4A21":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "state", ()=>state
+);
+parcelHelpers.export(exports, "loadRecipe", ()=>loadRecipe
+);
+const state = {
+    recipe: {}
+};
+const loadRecipe = async function(id) {
+    try {
         const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`);
         const data = await res.json();
         if (!res.ok) throw new Error(`${data.message} (${res.status})`);
-        let { recipe  } = data.data;
-        recipe = {
+        const { recipe  } = data.data;
+        state.recipe = {
             id: recipe.id,
             title: recipe.title,
             publisher: recipe.publisher,
@@ -563,13 +579,77 @@ const showRecipe = async function() {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients
         };
-        console.log(recipe);
-        // 2) Rendering recipe
+        console.log(state.recipe);
+    } catch (err) {
+        alert(err);
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"l60JC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// import icons from '../img/icons.svg'; // Parcel 1
+var _iconsSvg = require("url:../../img/icons.svg"); // Parcel 2
+var _iconsSvgDefault = parcelHelpers.interopDefault(_iconsSvg);
+class RecipeView {
+    #parentElement = document.querySelector('.recipe');
+    #data;
+    render(data) {
+        this.#data = data;
+        const markup = this._generateMarkup();
+        this.#clear();
+        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+    }
+     #clear() {
+        this.#parentElement.textContent = '';
+    }
+    renderSpinner = function() {
         const markup = `
+        <div class="spinner">
+          <svg>
+            <use href="${_iconsSvgDefault.default}#icon-loader"></use>
+          </svg>
+        </div>  
+        `;
+        this.#parentElement.textContent = '';
+        this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+    };
+    _generateMarkup() {
+        return `
    <figure class="recipe__fig">
-          <img src="${recipe.image}" alt="${recipe.title}" class="recipe__img" />
+          <img src="${this.#data.image}" alt="${this.#data.title}" class="recipe__img" />
           <h1 class="recipe__title">
-            <span>${recipe.title}</span>
+            <span>${this.#data.title}</span>
           </h1>
         </figure>
 
@@ -578,14 +658,14 @@ const showRecipe = async function() {
             <svg class="recipe__info-icon">
               <use href="${_iconsSvgDefault.default}#icon-clock"></use>
             </svg>
-            <span class="recipe__info-data recipe__info-data--minutes">${recipe.cookingTime}</span>
+            <span class="recipe__info-data recipe__info-data--minutes">${this.#data.cookingTime}</span>
             <span class="recipe__info-text">minutes</span>
           </div>
           <div class="recipe__info">
             <svg class="recipe__info-icon">
               <use href="${_iconsSvgDefault.default}#icon-users"></use>
             </svg>
-            <span class="recipe__info-data recipe__info-data--people">${recipe.servings}</span>
+            <span class="recipe__info-data recipe__info-data--people">${this.#data.servings}</span>
             <span class="recipe__info-text">servings</span>
 
             <div class="recipe__info-buttons">
@@ -617,7 +697,7 @@ const showRecipe = async function() {
         <div class="recipe__ingredients">
           <h2 class="heading--2">Recipe ingredients</h2>
           <ul class="recipe__ingredient-list">
-            ${recipe.ingredients.map((ing)=>{
+            ${this.#data.ingredients.map((ing)=>{
             return `
                 <li class="recipe__ingredient">
                   <svg class="recipe__icon">
@@ -637,12 +717,12 @@ const showRecipe = async function() {
           <h2 class="heading--2">How to cook it</h2>
           <p class="recipe__directions-text">
             This recipe was carefully designed and tested by
-            <span class="recipe__publisher">${recipe.publisher}</span>. Please check out
+            <span class="recipe__publisher">${this.#data.publisher}</span>. Please check out
             directions at their website.
           </p>
           <a
             class="btn--small recipe__btn"
-            href="${recipe.sourceUrl}"
+            href="${this.#data.sourceUrl}"
             target="_blank"
           >
             <span>Directions</span>
@@ -652,22 +732,11 @@ const showRecipe = async function() {
           </a>
         </div>
    `;
-        recipeContainer.textContent = '';
-        recipeContainer.insertAdjacentHTML('afterbegin', markup);
-    } catch (err) {
-        alert(err);
     }
-};
-showRecipe();
-[
-    'hashchange',
-    'load'
-].forEach((ev)=>window.addEventListener(ev, showRecipe)
-) // window.addEventListener('hashchange', showRecipe)
- // window.addEventListener('load', showRecipe);
-;
+}
+exports.default = new RecipeView();
 
-},{"url:../img/icons.svg":"loVOp","../../node_modules/core-js/stable":"7CRIE","regenerator-runtime/runtime":"dXNgZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"loVOp":[function(require,module,exports) {
+},{"url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"loVOp":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('hWUTQ') + "icons.dfd7a6db.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -15290,36 +15359,6 @@ try {
     if (typeof globalThis === "object") globalThis.regeneratorRuntime = runtime;
     else Function("r", "regeneratorRuntime = r")(runtime);
 }
-
-},{}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
 
 },{}]},["ddCAb","aenu9"], "aenu9", "parcelRequire3a11")
 
