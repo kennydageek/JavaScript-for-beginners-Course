@@ -32,7 +32,7 @@ class AddRecipeView extends View {
         this._parentElement.addEventListener('submit', function(e) {
             e.preventDefault();
             const dataArr = [...new FormData(this)];
-            const data = Object.fromEntries(DataTransfer)
+            const data = Object.fromEntries(dataArr);
             handler(data);
         })
     } 

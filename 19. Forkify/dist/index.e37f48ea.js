@@ -595,9 +595,14 @@ const controlAddBookmark = function() {
 const controlBookmarks = function() {
     _bookmarksViewJsDefault.default.render(_modelJs.state.bookmarks);
 };
-const controlAddRecipe = function(newRecipe) {
-    console.log(newRecipe);
-// Upload the new Recipe Data
+const controlAddRecipe = async function(newRecipe) {
+    try {
+        // Upload the new Recipe Data
+        await _modelJs.uploadRecipe(newRecipe);
+    } catch (err) {
+        console.error('***', err);
+        _addRecipeViewJsDefault.default.renderError(err.message);
+    }
 };
 const init = function() {
     _bookmarksViewJsDefault.default.addHandlerRender(controlBookmarks);
@@ -626,6 +631,8 @@ parcelHelpers.export(exports, "updateServings", ()=>updateServings
 parcelHelpers.export(exports, "addBookmark", ()=>addBookmark
 );
 parcelHelpers.export(exports, "deleteBookmark", ()=>deleteBookmark
+);
+parcelHelpers.export(exports, "uploadRecipe", ()=>uploadRecipe
 );
 // import { async } from 'regenerator-runtime';
 var _configJs = require("./config.js");
@@ -721,8 +728,25 @@ const init = function() {
 init();
 const clearBookmarks = function() {
     localStorage.clear('bookmarks');
-} // clearBookmarks();
-;
+};
+const uploadRecipe = async function(newRecipe) {
+    try {
+        const ingredients = Object.entries(newRecipe).filter((entry)=>entry[0].startsWith('ingredient') && entry[1] !== ''
+        ).map((ing)=>{
+            const ingArr = ing[1].replaceAll(' ', '').split(',');
+            if (ingArr.length !== 3) throw new Error('Wrong ingredient format! Please use the correct format :)');
+            const [quantity, unit, description] = ingArr;
+            return {
+                quantity: quantity ? +quantity : null,
+                unit,
+                description
+            };
+        });
+        console.log(ingredients);
+    } catch (err) {
+        throw err;
+    }
+};
 
 },{"./config.js":"k5Hzs","./helpers.js":"hGI1E","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k5Hzs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -15808,7 +15832,7 @@ class AddRecipeView extends _viewJsDefault.default {
             const dataArr = [
                 ...new FormData(this)
             ];
-            const data = Object.fromEntries(DataTransfer);
+            const data = Object.fromEntries(dataArr);
             handler(data);
         });
     }
